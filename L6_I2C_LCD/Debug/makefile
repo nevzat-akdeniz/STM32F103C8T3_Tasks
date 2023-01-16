@@ -60,8 +60,8 @@ all: main-build
 main-build: L6_I2C_LCD.elf secondary-outputs
 
 # Tool invocations
-L6_I2C_LCD.elf L6_I2C_LCD.map: $(OBJS) $(USER_OBJS) C:\Users\Nevzat\STM32CubeIDE\workspace_1.11.0\L6_I2C_LCD\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "L6_I2C_LCD.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Nevzat\STM32CubeIDE\workspace_1.11.0\L6_I2C_LCD\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="L6_I2C_LCD.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+L6_I2C_LCD.elf L6_I2C_LCD.map: $(OBJS) $(USER_OBJS) /home/nevzat/STM32CubeIDE/workspace_1.10.1/L6_I2C_LCD/STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "L6_I2C_LCD.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"/home/nevzat/STM32CubeIDE/workspace_1.10.1/L6_I2C_LCD/STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="L6_I2C_LCD.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
