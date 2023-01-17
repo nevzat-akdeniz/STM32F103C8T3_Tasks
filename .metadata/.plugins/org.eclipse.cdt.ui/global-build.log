@@ -1,59 +1,21 @@
-22:18:49 **** Incremental Build of configuration Debug for project L7_MPU6050 ****
+21:48:46 **** Incremental Build of configuration Debug for project L7_MPU6050 ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:236:4: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
-  236 |    sprintf (buf, "%.2f", Ax);
-      |    ^~~~~~~
-../Core/Src/main.c:236:4: warning: incompatible implicit declaration of built-in function 'sprintf'
-../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-   26 | #include "i2c-lcd.h"
-  +++ |+#include <stdio.h>
-   27 | /* USER CODE END Includes */
-../Core/Src/main.c:236:23: warning: 'sprintf' may write a terminating nul past the end of the destination [-Wformat-overflow=]
-  236 |    sprintf (buf, "%.2f", Ax);
-      |                       ^
-../Core/Src/main.c:236:4: note: 'sprintf' output between 4 and 314 bytes into a destination of size 4
-  236 |    sprintf (buf, "%.2f", Ax);
-      |    ^~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:242:23: warning: 'sprintf' may write a terminating nul past the end of the destination [-Wformat-overflow=]
-  242 |    sprintf (buf, "%.2f", Ay);
-      |                       ^
-../Core/Src/main.c:242:4: note: 'sprintf' output between 4 and 314 bytes into a destination of size 4
-  242 |    sprintf (buf, "%.2f", Ay);
-      |    ^~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:248:23: warning: 'sprintf' may write a terminating nul past the end of the destination [-Wformat-overflow=]
-  248 |    sprintf (buf, "%.2f", Az);
-      |                       ^
-../Core/Src/main.c:248:4: note: 'sprintf' output between 4 and 314 bytes into a destination of size 4
-  248 |    sprintf (buf, "%.2f", Az);
-      |    ^~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:254:23: warning: 'sprintf' may write a terminating nul past the end of the destination [-Wformat-overflow=]
-  254 |    sprintf (buf, "%.2f", Gx);
-      |                       ^
-../Core/Src/main.c:254:4: note: 'sprintf' output between 4 and 314 bytes into a destination of size 4
-  254 |    sprintf (buf, "%.2f", Gx);
-      |    ^~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:259:23: warning: 'sprintf' may write a terminating nul past the end of the destination [-Wformat-overflow=]
-  259 |    sprintf (buf, "%.2f", Gy);
-      |                       ^
-../Core/Src/main.c:259:4: note: 'sprintf' output between 4 and 314 bytes into a destination of size 4
-  259 |    sprintf (buf, "%.2f", Gy);
-      |    ^~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:264:23: warning: 'sprintf' may write a terminating nul past the end of the destination [-Wformat-overflow=]
-  264 |    sprintf (buf, "%.2f", Gz);
-      |                       ^
-../Core/Src/main.c:264:4: note: 'sprintf' output between 4 and 314 bytes into a destination of size 4
-  264 |    sprintf (buf, "%.2f", Gz);
-      |    ^~~~~~~~~~~~~~~~~~~~~~~~~
 arm-none-eabi-gcc -o "L7_MPU6050.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/nevzat/STM32CubeIDE/workspace_1.10.1/L7_MPU6050/STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="L7_MPU6050.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: L7_MPU6050.elf
  
 arm-none-eabi-size   L7_MPU6050.elf 
 arm-none-eabi-objdump -h -S  L7_MPU6050.elf  > "L7_MPU6050.list"
    text	   data	    bss	    dec	    hex	filename
-  15852	    120	   1792	  17764	   4564	L7_MPU6050.elf
+  13028	     20	   1700	  14748	   399c	L7_MPU6050.elf
 Finished building: default.size.stdout
  
 Finished building: L7_MPU6050.list
+ 
+21:48:51 **** Incremental Build of configuration Debug for project L7_MPU6050 ****
+make -j12 all 
+arm-none-eabi-size   L7_MPU6050.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13028	     20	   1700	  14748	   399c	L7_MPU6050.elf
+Finished building: default.size.stdout
  

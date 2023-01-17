@@ -162,15 +162,15 @@ void MPU6050_Read_Gyro (void)
 	Gz = Gyro_Z_RAW/131.0;
 }
 
-void MPU6050_Read_Temperature (void)
+void MPU6050_Read_Temperature ()
 {
 	uint8_t Rec_Data[2];
 
 	HAL_I2C_Mem_Read(&hi2c1, MPU6050_ADDR, TEMP_OUT_H_REG, 1, Rec_Data, 2, 1000);
 
-	Temperature_RAW = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]);
+	Temperature_RAW = (Rec_Data[0] << 8 | Rec_Data [1]);
 
-	T = (float)(Temperature_RAW / (float)340.0 + (float)36.53);
+	T = (float)((int16_t)Temperature_RAW / (float)340.0 + (float)36.53);
 
 
 }
