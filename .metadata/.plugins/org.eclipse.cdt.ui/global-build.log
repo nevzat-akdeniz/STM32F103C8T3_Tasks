@@ -1,21 +1,77 @@
-21:48:46 **** Incremental Build of configuration Debug for project L7_MPU6050 ****
+21:18:35 **** Incremental Build of configuration Debug for project A02YYUW_Ultrasonik__Sensor ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "L7_MPU6050.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/nevzat/STM32CubeIDE/workspace_1.10.1/L7_MPU6050/STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="L7_MPU6050.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: L7_MPU6050.elf
+arm-none-eabi-gcc -o "A02YYUW_Ultrasonik__Sensor.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/nevzat/STM32CubeIDE/workspace_1.10.1/A02YYUW_Ultrasonik__Sensor/STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="A02YYUW_Ultrasonik__Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: A02YYUW_Ultrasonik__Sensor.elf
  
-arm-none-eabi-size   L7_MPU6050.elf 
-arm-none-eabi-objdump -h -S  L7_MPU6050.elf  > "L7_MPU6050.list"
+arm-none-eabi-size   A02YYUW_Ultrasonik__Sensor.elf 
+arm-none-eabi-objdump -h -S  A02YYUW_Ultrasonik__Sensor.elf  > "A02YYUW_Ultrasonik__Sensor.list"
    text	   data	    bss	    dec	    hex	filename
-  13028	     20	   1700	  14748	   399c	L7_MPU6050.elf
+   7544	     20	   1644	   9208	   23f8	A02YYUW_Ultrasonik__Sensor.elf
 Finished building: default.size.stdout
  
-Finished building: L7_MPU6050.list
+Finished building: A02YYUW_Ultrasonik__Sensor.list
  
-21:48:51 **** Incremental Build of configuration Debug for project L7_MPU6050 ****
+21:18:39 **** Incremental Build of configuration Debug for project A02YYUW_Ultrasonik__Sensor ****
+make -j12 all 
+arm-none-eabi-size   A02YYUW_Ultrasonik__Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7544	     20	   1644	   9208	   23f8	A02YYUW_Ultrasonik__Sensor.elf
+Finished building: default.size.stdout
+ 
+21:19:10 **** Incremental Build of configuration Debug for project A02YYUW_Ultrasonik__Sensor ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "A02YYUW_Ultrasonik__Sensor.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/nevzat/STM32CubeIDE/workspace_1.10.1/A02YYUW_Ultrasonik__Sensor/STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="A02YYUW_Ultrasonik__Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: A02YYUW_Ultrasonik__Sensor.elf
+ 
+arm-none-eabi-size   A02YYUW_Ultrasonik__Sensor.elf 
+arm-none-eabi-objdump -h -S  A02YYUW_Ultrasonik__Sensor.elf  > "A02YYUW_Ultrasonik__Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+   7544	     20	   1644	   9208	   23f8	A02YYUW_Ultrasonik__Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: A02YYUW_Ultrasonik__Sensor.list
+ 
+21:19:51 **** Incremental Build of configuration Debug for project A02YYUW_Ultrasonik__Sensor ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "A02YYUW_Ultrasonik__Sensor.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/nevzat/STM32CubeIDE/workspace_1.10.1/A02YYUW_Ultrasonik__Sensor/STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="A02YYUW_Ultrasonik__Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: A02YYUW_Ultrasonik__Sensor.elf
+ 
+arm-none-eabi-size   A02YYUW_Ultrasonik__Sensor.elf 
+arm-none-eabi-objdump -h -S  A02YYUW_Ultrasonik__Sensor.elf  > "A02YYUW_Ultrasonik__Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+   7544	     20	   1644	   9208	   23f8	A02YYUW_Ultrasonik__Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: A02YYUW_Ultrasonik__Sensor.list
+ 
+21:20:40 **** Incremental Build of configuration Debug for project A02YYUW_Ultrasonik__Sensor ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "A02YYUW_Ultrasonik__Sensor.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/nevzat/STM32CubeIDE/workspace_1.10.1/A02YYUW_Ultrasonik__Sensor/STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="A02YYUW_Ultrasonik__Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: A02YYUW_Ultrasonik__Sensor.elf
+ 
+arm-none-eabi-size   A02YYUW_Ultrasonik__Sensor.elf 
+arm-none-eabi-objdump -h -S  A02YYUW_Ultrasonik__Sensor.elf  > "A02YYUW_Ultrasonik__Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+   7544	     20	   1644	   9208	   23f8	A02YYUW_Ultrasonik__Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: A02YYUW_Ultrasonik__Sensor.list
+ 
+21:20:41 **** Incremental Build of configuration Debug for project L7_MPU6050 ****
 make -j12 all 
 arm-none-eabi-size   L7_MPU6050.elf 
    text	   data	    bss	    dec	    hex	filename
-  13028	     20	   1700	  14748	   399c	L7_MPU6050.elf
+  13048	     20	   1700	  14768	   39b0	L7_MPU6050.elf
+Finished building: default.size.stdout
+ 
+21:20:46 **** Incremental Build of configuration Debug for project A02YYUW_Ultrasonik__Sensor ****
+make -j12 all 
+arm-none-eabi-size   A02YYUW_Ultrasonik__Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7544	     20	   1644	   9208	   23f8	A02YYUW_Ultrasonik__Sensor.elf
 Finished building: default.size.stdout
  
