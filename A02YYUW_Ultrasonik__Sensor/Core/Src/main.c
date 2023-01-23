@@ -91,6 +91,7 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+
   HAL_UART_Receive_IT(&huart1, arr, 4);
 
   /* USER CODE END 2 */

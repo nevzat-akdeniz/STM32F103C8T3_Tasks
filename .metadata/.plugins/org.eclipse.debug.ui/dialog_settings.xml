@@ -4,8 +4,8 @@
 		<item key="org.eclipse.debug.ui.DIALOG_SASH_WEIGHTS_1" value="324"/>
 		<item key="org.eclipse.debug.ui.DIALOG_SASH_WEIGHTS_2" value="675"/>
 		<item key="org.eclipse.debug.ui.EXPANDED_NODES" value=", com.st.stm32cube.ide.mcu.debug.launch.launchConfigurationType, com.st.stm32cube.ide.mpu.linux.debug.deployment.launchConfigurationType, "/>
-		<item key="DIALOG_WIDTH" value="1578"/>
-		<item key="DIALOG_HEIGHT" value="785"/>
+		<item key="DIALOG_WIDTH" value="1213"/>
+		<item key="DIALOG_HEIGHT" value="876"/>
 		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
 	</section>
 	<section name="org.eclipse.debug.ui.LAUNCH_CONFIGURATION_PROPERTIES_DIALOG_SECTION">
