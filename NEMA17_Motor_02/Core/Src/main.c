@@ -55,16 +55,6 @@ static void MX_TIM1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-#define DIR_PIN GPIO_PIN_1
-#define DIR_PORT GPIOA
-#define STEP_PIN GPIO_PIN_2
-#define STEP_PORT GPIOA
-
-#define closeLid 0
-#define openLid 1
-
-uint8_t ext = 0;
-
 
 void microDelay (uint16_t delay)
 {
@@ -72,17 +62,20 @@ void microDelay (uint16_t delay)
   while (__HAL_TIM_GET_COUNTER(&htim1) < delay);   // wait for the counter to reach the us input in the parameter
 }
 
-void step (uint8_t direction)
+void lidControl(uint8_t direction, uint16_t velocity)
 {
-  if (direction == 0)
-  {
-	  HAL_GPIO_WritePin(DIR_PORT, DIR_PIN, GPIO_PIN_SET);
-  }
-   else
-  {
-	  HAL_GPIO_WritePin(DIR_PORT, DIR_PIN, GPIO_PIN_RESET);
-  }
+	if(direction == 0)
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_SET);  //lid close
+
+	else if(direction == 1)
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_RESET); //lid open
+
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, GPIO_PIN_SET);
+	microDelay(velocity);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, GPIO_PIN_RESET);
+	microDelay(velocity);
 }
+
 /* USER CODE END 0 */
 
 /**
@@ -125,63 +118,27 @@ int main(void)
   {
 	  /* LID OPEN/CLOSE */
 
-//	  if (HAL_GPIO_ReadPin(COMMAND_GPIO_Port, COMMAND_Pin) == 0)
-//	  {
-//		  if(ext == 1)
-//		  {
-//			  step(0, 0);
-//		  }
-//		  else
-//		  step(0, 1000); //CCW
-//	  }
-//	  else
-//	  {
-//		  if(ext == 2)
-//		  {
-//			  step(0, 0);
-//		  }
-//		  else
-//		  step(1, 1000); //CW
-//	  }
-//
-//	  if (HAL_GPIO_ReadPin(CLOSE_GPIO_Port, CLOSE_Pin) != 0)
-//		  ext = 1;
-//
-//	  else if (HAL_GPIO_ReadPin(OPEN_GPIO_Port, OPEN_Pin) != 0)
-//		  ext = 2;
-//	  else
-//		  ext = 0;
-
-	  void Close()
-	  {
-			step(closeLid);
-			HAL_GPIO_WritePin(STEP_PORT, STEP_PIN, GPIO_PIN_SET);
-			microDelay(1000);
-			HAL_GPIO_WritePin(STEP_PORT, STEP_PIN, GPIO_PIN_RESET);
-			microDelay(1000);
-	  }
-
 	  if (HAL_GPIO_ReadPin(COMMAND_GPIO_Port, COMMAND_Pin) == 1) //open lid command
 	  {
 		  if(HAL_GPIO_ReadPin(OPEN_GPIO_Port, OPEN_Pin) != 1)
 		  {
-				step(openLid);
-				HAL_GPIO_WritePin(STEP_PORT, STEP_PIN, GPIO_PIN_SET);
-				microDelay(1000);
-				HAL_GPIO_WritePin(STEP_PORT, STEP_PIN, GPIO_PIN_RESET);
-				microDelay(1000);
-
+			  lidControl(0, 1000);
 		  }
 		  else if (HAL_GPIO_ReadPin(OPEN_GPIO_Port, OPEN_Pin) == 1)
 		  {
-				HAL_GPIO_WritePin(STEP_PORT, STEP_PIN, GPIO_PIN_SET);
-				microDelay(0);
-				HAL_GPIO_WritePin(STEP_PORT, STEP_PIN, GPIO_PIN_RESET);
-				microDelay(0);
+			  lidControl(0, 0);
 		  }
-		  else if(HAL_GPIO_ReadPin(COMMAND_GPIO_Port, COMMAND_Pin) == 0)
+	  }
+
+	  if (HAL_GPIO_ReadPin(COMMAND_GPIO_Port, COMMAND_Pin) == 0) //close lid command
+	  {
+		  if(HAL_GPIO_ReadPin(CLOSE_GPIO_Port, CLOSE_Pin) != 1)
 		  {
-			  Close();
+			  lidControl(1, 1000);
+		  }
+		  else if (HAL_GPIO_ReadPin(CLOSE_GPIO_Port, CLOSE_Pin) == 1)
+		  {
+			  lidControl(0, 0);
 		  }
 	  }
 

@@ -66,16 +66,25 @@ static void MX_I2C2_Init(void);
 #define MEAS_RH_T_POLLING 0x58E0 // meas. read RH first, clock stretching disabled
 #define MEAS_RH_T_CLOCKSTR 0x5C24  // meas. read RH first, clock stretching enabled
 
-uint8_t check;
+uint32_t checkReady;
+uint32_t val;
 
 void SHTC3_Init(void)
 {
-	//uint8_t data;
-
+	uint8_t data[8];
 
 	//data = 0x3517;
 	//HAL_I2C_Mem_Write(&hi2c2, SHTC3_ADDR_REG, WAKEUP, 1, &data, 1, 10000);
-	HAL_I2C_Mem_Read(&hi2c2, SHTC3_ADDR_REG, READ_ID, 1, &check, 1, 10000);
+	//HAL_I2C_Mem_Read(&hi2c2, SHTC3_ADDR_REG, READ_ID, 1, &check, 1, 10000);
+	HAL_I2C_Master_Receive(&hi2c2, SHTC3_ADDR_REG, MEAS_RH_T_POLLING, 4, HAL_MAX_DELAY);
+
+	data
+
+//	checkReady = HAL_I2C_IsDeviceReady(&hi2c2, SHTC3_ADDR_REG, 100, HAL_MAX_DELAY);
+//
+//	if (checkReady == HAL_OK) {
+//
+//	}
 
 }
 
